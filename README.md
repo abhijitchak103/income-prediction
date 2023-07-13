@@ -1,6 +1,6 @@
 # Insurance Premium Prediction Project
 
-Predicts the expected delivery time based on different features like City, Order Time, Distance of Order, Weather Conditions, etc..
+Predicts the expected premium for a customer given the basic information like `age`, `sex`, `bmi`, `children`, 'region`
 
 ### Create an Environment
 
