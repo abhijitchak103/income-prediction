@@ -1,6 +1,6 @@
 # Insurance Premium Prediction Project
 
-Predicts the expected premium for a customer given the basic information like `age`, `sex`, `bmi`, `children`, 'region`
+Predicts the expected premium for a customer given the basic information like `age`, `sex`, `bmi`, `children`, `region` and `smoker`
 
 ### Create an Environment
 
