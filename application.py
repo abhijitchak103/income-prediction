@@ -20,20 +20,12 @@ def predict_datapoint():
     
     else:
         data = CustomData(
-            Delivery_person_Age= float(request.form.get('Delivery_person_Age')), 
-            Delivery_person_Ratings= float(request.form.get('Delivery_person_Ratings')), 
-            Vehicle_condition= float(request.form.get('Vehicle_condition')),
-            multiple_deliveries= float(request.form.get('multiple_deliveries')), 
-            Festival= request.form.get('Festival'), 
-            Delivery_distance= float(request.form.get('Delivery_distance')), 
-            Time_to_pick= float(request.form.get('Time_to_pick')), 
-            Weather_conditions= request.form.get('Weather_conditions'),
-            Road_traffic_density= request.form.get('Road_traffic_density'),
-            Type_of_order= request.form.get('Type_of_order'), 
-            Type_of_vehicle= request.form.get('Type_of_vehicle'),
-            City= request.form.get('City'), 
-            Time_of_Day_Ordered= request.form.get('Time_of_Day_Ordered'),
-            Month= request.form.get('Month')
+            age = float(request.form.get('age')), 
+            children = int(request.form.get('children')),
+            bmi = float(request.form.get('bmi')),            
+            sex = request.form.get('sex'), 
+            region = request.form.get('region'),
+            smoker = request.form.get('smoker')
         )
 
         final_df = data.get_data_as_dataframe()
@@ -42,7 +34,7 @@ def predict_datapoint():
 
         result = round(pred[0], 2)
 
-        return render_template('results.html', final_result=f"{result} minutes")
+        return render_template('results.html', final_result=f"{round(result)}")
     
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug = False)
+    app.run(host='0.0.0.0', debug = True)

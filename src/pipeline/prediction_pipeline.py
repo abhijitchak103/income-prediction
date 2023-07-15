@@ -13,14 +13,14 @@ class PredictPipeline:
 
     def predict_data(self, features):
         try:
-            # preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
+            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
             model_path = os.path.join('artifacts', 'model.pkl')
 
-            # preprocessor = load_object(preprocessor_path)
+            preprocessor = load_object(preprocessor_path)
             model = load_object(model_path)
 
-            # data_scaled = preprocessor.transform(features)
-            pred = model.predict(features)
+            data_scaled = preprocessor.transform(features)
+            pred = model.predict(data_scaled)
 
             return pred
         except Exception as e:
@@ -30,12 +30,12 @@ class PredictPipeline:
 
 class CustomData:
     def __init__(self,
-                 age: int,
-                 sex: str,
-                 bmi: float,
+                 age: int, 
                  children: int,
-                 smoker: str,
-                 region: str):
+                 bmi: float,
+                 sex: str,
+                 region: str,
+                 smoker: str):
         self.age = age
         self.sex = sex
         self.bmi = bmi
@@ -48,11 +48,11 @@ class CustomData:
         try:
             custom_data_input_dict = {
                 'age' : [self.age],
-                'sex' : [self.sex],
-                'bmi' : [self.bmi],
                 'children' : [self.children],
-                'smoker' : [self.smoker],
-                'region' : [self.region]
+                'bmi' : [self.bmi],
+                'sex' : [self.sex],
+                'region' : [self.region],
+                'smoker' : [self.smoker]
             }
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe Gathered')

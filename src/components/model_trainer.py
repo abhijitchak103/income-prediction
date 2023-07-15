@@ -29,10 +29,10 @@ class ModelTrainer:
         try:
             logging.info('Getting X_train, X_test, y_train, y_test')
             X_train, y_train, X_test, y_test = (
-                train_arr.drop(columns = 'expenses', axis=1),
-                train_arr.expenses,
-                test_arr.drop(columns = 'expenses', axis=1),
-                test_arr.expenses
+                train_arr[:,:-1],
+                train_arr[:,-1],
+                test_arr[:,:-1],
+                test_arr[:,-1]
             )
 
             models = {
@@ -40,7 +40,7 @@ class ModelTrainer:
                             n_estimators=360,
                             min_samples_leaf=4,
                             min_samples_split=10,
-                            max_features='auto',
+                            max_features='sqrt',
                             max_depth=6
                             )
             }
