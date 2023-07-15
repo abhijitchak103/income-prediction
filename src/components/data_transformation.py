@@ -3,7 +3,7 @@ from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object
 
-from sklearn.preprocessing import LabelBinarizer, StandardScaler, LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -19,15 +19,6 @@ from dataclasses import dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')
 
-
-class MyLabelBinarizer(TransformerMixin):
-    def __init__(self, *args, **kwargs):
-        self.encoder = LabelBinarizer(*args, **kwargs)
-    def fit(self, x, y=0):
-        self.encoder.fit(x)
-        return self
-    def transform(self, x, y=0):
-        return self.encoder.transform(x)
 
 
 class DataTransformation:
@@ -127,10 +118,6 @@ class DataTransformation:
             )
 
             logging.info('Preprocessor pickle file saved')
-
-
-            # train_df = pd.concat([train_df[num_cols], train_df[cat_cols], train_df['expenses']], axis =1)
-            # test_df = pd.concat([test_df[num_cols], test_df[cat_cols], test_df['expenses']], axis =1)
 
             return(
                 train_arr,

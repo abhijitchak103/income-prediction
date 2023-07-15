@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
+import mlflow
+import mlflow.sklearn
 
 
 application = Flask(__name__)
@@ -28,13 +30,14 @@ def predict_datapoint():
             smoker = request.form.get('smoker')
         )
 
+
         final_df = data.get_data_as_dataframe()
         predict_pipeline = PredictPipeline()
         pred = predict_pipeline.predict_data(final_df)
 
-        result = round(pred[0], 2)
+        result = round(pred[0])
 
-        return render_template('results.html', final_result=f"{round(result)}")
+        return render_template('results.html', final_result=f"{result}")
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)
