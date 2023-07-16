@@ -14,3 +14,9 @@ conda activate venv/
 ```
 pip install -r requirements.txt
 ```
+
+
+### Deployments
+
+User interface web-api has been deployed on AWS Beanstalk:
+[Insurance Premium Predictor](http://insure-premium-env.eba-mimz6p2q.eu-north-1.elasticbeanstalk.com/)
