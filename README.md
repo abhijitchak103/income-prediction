@@ -52,21 +52,23 @@ There are no prerequisites to running the codebase.
 ```
 git clone https://github.com/abhijitchak103/insurance-premium-prediction.git
 ```
+
+2. Create local directory, unzip above downloaded files to the directory and open code editor in the same folder.
    
-2. Create local virtual environment and activate the same
+3. Create local virtual environment and activate the same
 
 ```
 conda create -p venv python==3.9
 conda activate venv/
 ```
 
-3. Install the required packages
+4. Install the required packages
  
 ```
 pip install -r requirements.txt
 ```
 
-4. Run the app
+5. Run the app
 
 ```
 python application.py
