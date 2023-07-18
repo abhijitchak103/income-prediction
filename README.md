@@ -48,24 +48,47 @@ There are no prerequisites to running the codebase.
 #### Installation
 
 1. Clone the repo
+   
 ```
-git clone 
-```   
-
+git clone https://github.com/abhijitchak103/insurance-premium-prediction.git
+```
+   
+2. Create local virtual environment and activate the same
 
 ```
 conda create -p venv python==3.9
 conda activate venv/
 ```
 
-### Install necessary libraries
-
+3. Install the required packages
+ 
 ```
 pip install -r requirements.txt
 ```
 
+4. Run the app
+
+```
+python application.py
+```
 
 ### Deployments
+--------------------------------------------------------
 
 User interface web-api has been deployed on AWS Beanstalk:
 [Insurance Premium Predictor](http://insure-premium-env.eba-mimz6p2q.eu-north-1.elasticbeanstalk.com/)
+
+### Next Steps
+--------------------------------------------------------
+
+Next steps would include 
+- incorporating MLOps like MLFlow, DVC.
+- increase database to introduce diversity.
+- incorporate XGBoost, Boosting, Bagging to check whether we can increase accuracy.
+
+### Feedback
+---------------------------------------------------------
+
+Each and every feedback is very much appreciated. It will help me implement better and increase efficiency in developing robust models.
+
+Till then, take care and happy predicting....
