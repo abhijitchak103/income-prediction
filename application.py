@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
 from src.pipeline.prediction_pipeline import CustomData, PredictPipeline
-import mlflow
-import mlflow.sklearn
 
 
 application = Flask(__name__)
