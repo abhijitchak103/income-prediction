@@ -77,8 +77,8 @@ python application.py
 ### Deployments
 --------------------------------------------------------
 
-User interface web-api has been deployed on AWS Beanstalk:
-[Insurance Premium Predictor](http://insure-premium-env.eba-mimz6p2q.eu-north-1.elasticbeanstalk.com/)
+User interface web-api has been deployed on Render:
+[Insurance Premium Predictor]([http://insure-premium-env.eba-mimz6p2q.eu-north-1.elasticbeanstalk.com/](https://insurance-premium-prediction-v5yt.onrender.com/))
 
 ### Next Steps
 --------------------------------------------------------
