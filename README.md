@@ -78,7 +78,7 @@ python application.py
 --------------------------------------------------------
 
 User interface web-api has been deployed on Render:
-[Insurance Premium Predictor]([http://insure-premium-env.eba-mimz6p2q.eu-north-1.elasticbeanstalk.com/](https://insurance-premium-prediction-v5yt.onrender.com/))
+[Insurance Premium Predictor](https://insurance-premium-prediction-v5yt.onrender.com/)
 
 ### Next Steps
 --------------------------------------------------------
